@@ -1,0 +1,28 @@
+var express = require('express');
+var fs = require('fs');
+var RSSparser = require('rssparser');
+var parserOptions = {};
+
+var app = express();
+ 
+/*
+app.get('/', function(request, response) {
+
+  var fileIn = fs.readFileSync('index.html');
+  response.send(fileIn.toString());
+
+});
+*/
+app.get('/', function(request, response) {
+
+  var fileIn = fs.readFileSync('index.html');
+  response.send(fileIn.toString());
+
+});
+
+
+
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
